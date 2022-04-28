@@ -1,0 +1,174 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("images/background.png");
+    font-size: 8pt;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.img-header {
+    width: 60%;
+    height: 50px;
+    display: flex;
+    margin: auto;
+    background-image: url("images/bannerbg.png");
+}
+
+.title1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24pt;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: #999999 3px 3px;
+}
+
+.parts {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    margin: auto;
+    border: gray 4px solid;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.banner {
+
+    background-image: url("images/bannerbg.png");
+}
+
+.rotten-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image: url(images/rbg.png);
+    border-top-left-radius: 17px;
+
+}
+
+.rotten-title img {
+    border-radius: 17px;
+
+}
+
+.rotten-title p {
+    font-size: 48px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding-left: 5px;
+    color: red;
+}
+
+
+
+.boxed {
+    min-height: 21px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    background-color: #e8dc9b;
+    border: solid 3px grey;
+}
+
+.boxed img {
+    float: left;
+    padding-right: 5px;
+}
+
+.boxed q {
+    font-weight: bold;
+}
+
+.boxed-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxed-title img {
+    padding: 5px;
+}
+
+.boxed-title .names span {
+    font-style: italic;
+}
+
+.comment-part {
+    display: flex;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.comments {
+    flex: 1;
+    padding: 0 5px;
+}
+
+.left-part {
+    flex: 2;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+.right-part {
+    flex: 1;
+    border-top-right-radius: 17px;
+    background-color: #a2b964;
+    margin-right: -1px;
+    margin-top: 1px;
+    margin-bottom: -1px;
+}
+
+.roster {
+    width: 100%;
+    margin-top: -1px;
+}
+
+.roster img {
+    width: 100%;
+    border-top-right-radius: 17px;
+}
+
+dl {
+    padding: 20px;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+dt:first-child {
+    margin-top: 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.bottom {
+    height: 20px;
+    text-align: center;
+    background-color: #a2b964;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    margin-top: -1px;
+    margin-right: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+}
