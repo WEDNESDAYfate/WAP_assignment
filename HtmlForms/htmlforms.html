@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>HTML Forms Lab</title>
+</head>
+
+<body>
+    <div class="form">
+        <button class="form-title-button">New User Signup:</button>
+        <div class="form-body">
+            <form action="">
+                <div class="row">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" minlength="1" size="16" required />
+                </div>
+
+                <div class="row">
+                    <label for="">Gender</label>
+                    <input type="radio" name="cc" value="Male"> <span>Male</span>
+                    <input type="radio" name="cc" value="Female"> <span>Female</span>
+                </div>
+
+                <div class="row">
+                    <label for="age" id="age">Age:</label>
+                    <input class="short" type="number" name="age" id="age" minlength="1" maxlength="2" size="2"
+                        required />
+                </div>
+
+                <div class="row">
+                    <label for="">Personality type:</label>
+                    <input type="text" maxlength="2" minlength="1" size="4" required />
+                    <span class="small-font">( <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp" class="red">
+                            Don't know your type? </a>) </span>
+                </div>
+
+                <div class="row">
+                    <label for="">Favority OS:</label>
+                    <select name="" id="">
+                        <option value="" selected>Windows</option>
+                        <option value="">Mac OS</option>
+                        <option value="">Lunix</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="">Seeking age:</label>
+                    <input class="short" type="text" size="6" placeholder="min">
+                    <span class="to">to</span>
+                    <input class="short" type="text" size="6" placeholder="max">
+                </div>
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
