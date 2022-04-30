@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function calcTip() {
+        var sub = document.getElementById("subtotal").value;
+        var tip = document.getElementById("tip").value;
+        var formatter = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+        });
+        document.getElementById("total").innerHTML = formatter.format(
+            (sub * tip) / 100
+        );
+    }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+
+    <style>
+        body {
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 2cm;
+        }
+
+        div {
+            margin: 5mm;
+
+        }
+
+        body,
+        input,
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15pt;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <h1> <img src="calc.jpeg" alt=""> TIP CALCULATOR</h1>
+
+    <div>
+
+        <label class="text"> <input type="text" id="subtotal">$ Subtotal</label>
+    </div>
+    <div>
+
+        <label> <input type="text" id="tip">% Tip</label>
+    </div>
+    <div>
+        <button id="button" onclick="calcTip();">Calculator Tip</button>
+    </div>
+    <hr />
+    <div>
+        <h2> Your Total:</h2>
+        <p id="total">$0.00</p>
+    </div>
+</body>
+
+</html>
