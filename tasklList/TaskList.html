@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+
+    <style>
+        .box {
+            width: 700px;
+            border: 1px solid darkblue;
+            border-width: 1mm;
+            /* padding: 10px 10px; */
+            margin: auto;
+            margin-top: 100px;
+            box-shadow: #979797 3px 3px;
+
+
+        }
+
+        .title {
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 1cm;
+            padding-left: 1cm;
+            font-weight: bold;
+            font-size: 7mm;
+        }
+
+        .row {
+            padding-left: 1cm;
+            padding: 10px 60px;
+
+        }
+
+        .clear-tasks {
+            width: 250px;
+            margin-bottom: 50px;
+        }
+
+        .add-task {
+            width: 250px;
+        }
+
+        .part {
+            display: inline-table;
+        }
+    </style>
+    <script>
+        function addTask() {
+            document.getElementById('display').innerHTML =
+                document.getElementById("user_input").value;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+
+        <form action="">
+
+            <div class="title">
+                <label for="">Task List</label>
+            </div>
+            <div class="part">
+
+
+                <div class="row">
+                    <label for="">Task</label> <br />
+                    <input type="text" size="32" id="user_input">
+                </div>
+
+                <div class="row">
+                    <button class="add-task" id="addTask();" onclick="submit"> Add Task</button>
+                </div>
+
+                <div class="row">
+                    <button class="clear-tasks" id="clearTasks">Clear Tasks</button>
+                </div>
+            </div>
+
+            <div class="part">
+                <div class="task-list">
+                    <label for="">Task List</label> <br>
+                    <textarea name="task-list" id="display" cols="32" rows="6"></textarea>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
