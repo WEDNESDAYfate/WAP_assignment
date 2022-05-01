@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function swapText() {
+        var span = document.getElementById("output2");
+        var textBox = document.getElementById("textbox2");
+        var temp = span.innerHTML;
+        span.innerHTML = textBox.value;
+        textBox.value = temp;
+    }
+</script>
+
+<body>
+    <button onclick="swapText();">Click me!</button>
+    <span id="output2">Hello</span>
+    <input id="textbox2" type="text" value="Goodbye" />
+
+</body>
+
+</html>

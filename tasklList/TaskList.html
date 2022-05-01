@@ -49,17 +49,87 @@
         }
     </style>
     <script>
-        function addTask() {
-            document.getElementById('display').innerHTML =
-                document.getElementById("user_input").value;
-        }
+
+        // window.onload = function () {
+        //     document.getElementById("add_task").addEventListener('click', add_task);
+        //     // document.getElementById("clearTasks").addEventListener('click', clearTasks);
+        //     $("clear_tasks").onclick = clearTaskList;
+        // };
+        // var clearTaskList = function () {
+        //     tasks.length = 0;
+        //     localStorage.tasks = "";
+        //     $("task_list").value = "";
+        //     $("task").focus();
+        // };
+
+
+        // function add_task(e) {
+
+        //     e.preventDefault();
+
+        //     const taskValue = document.getElementById("display").value;
+        //     if (taskValue !== "") {
+
+        //         document.getElementById('display').innerHTML =
+        //             taskValue + "\n" +
+        //             document.getElementById("task").value;
+        //     }
+        //     else {
+        //         document.getElementById('display').innerHTML =
+        //             document.getElementById("task").value;
+        //     }
+        //}
+        var $ = function (id) { return document.getElementById(id); };
+        var tasks = [];
+        var displayTaskList = function () {
+            var list = "";
+            if (tasks.length === 0) {
+                var storage = localStorage.getItem("tasks") || "";
+                if (storage.length > 0) {
+                    tasks = storage.split("|");
+                }
+            }
+            if (tasks.length > 0) {
+                tasks.sort();
+                list = tasks.join("\n");
+            }
+            $("task_list").value = list;
+            $("task").focus();
+        };
+
+        var addToTaskList = function () {
+            var task = $("task");
+            if (task.value === "") {
+                alert("Please enter a task.");
+            } else {
+                // add task to array and local storage
+                tasks.push(task.value);
+                localStorage.tasks = tasks.join("|");
+
+                // clear task text box and re-display tasks
+                task.value = "";
+                displayTaskList();
+            }
+        };
+        var clearTaskList = function () {
+            tasks.length = 0;
+            localStorage.tasks = "";
+            $("task_list").value = "";
+            $("task").focus();
+        };
+
+        window.onload = function () {
+            $("add_task").onclick = addToTaskList;
+            $("clear_tasks").onclick = clearTaskList;
+            displayTaskList();
+        };
     </script>
 </head>
 
 <body>
     <div class="box">
 
-        <form action="">
+        <form action="#">
 
             <div class="title">
                 <label for="">Task List</label>
@@ -69,22 +139,23 @@
 
                 <div class="row">
                     <label for="">Task</label> <br />
-                    <input type="text" size="32" id="user_input">
+                    <input type="text" size="32" id="task">
                 </div>
 
                 <div class="row">
-                    <button class="add-task" id="addTask();" onclick="submit"> Add Task</button>
+                    <button class="add-task " id="add_task"> Add Task</button>
                 </div>
 
                 <div class="row">
-                    <button class="clear-tasks" id="clearTasks">Clear Tasks</button>
+                    <button class="clear-tasks" id="clear_tasks">Clear Tasks</button>
                 </div>
             </div>
 
             <div class="part">
                 <div class="task-list">
                     <label for="">Task List</label> <br>
-                    <textarea name="task-list" id="display" cols="32" rows="6"></textarea>
+                    <textarea id="task_list" cols="32" rows="6"></textarea>
+
 
                 </div>
             </div>
