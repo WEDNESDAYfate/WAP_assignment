@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 2cm;
+        }
+
+        .part {
+            margin-bottom: 10px;
+        }
+
+        fieldset {
+            position: fixed;
+
+        }
+    </style>
+</head>
+<script>
+    accountList = [];
+    var AC = (function () {
+        var accountObj = {
+            accountName: "",
+            deposit: 0,
+        };
+
+        let add = function (name, deposit) {
+            var newAcc = Object.create(accountObj);
+            newAcc.accName = name;
+            newAcc.deposit = deposit;
+
+            accountList.push(newAcc);
+        };
+
+        return {
+            addAccount: function (name, deposit) {
+                add(name, deposit);
+            },
+        };
+    })();
+
+    function createAccount() {
+        var accName = document.getElementById("account_name").value;
+        var deposit = document.getElementById("deposit").value;
+
+        AC.addAccount(accName, deposit);
+
+        document.getElementById("info").innerHTML = accountList.map(
+            (e) => "\nAccount name: " + e.accName + " Balance: " + e.deposit
+        );
+
+        console.log(accountList);
+    }
+</script>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>BANK OF LKHAGVAZAYA</legend>
+            <div class="bank-part">
+                <div class="part">
+                    <label for="">Account Name: </label>
+                    <input type="text" id="account_name">
+                </div>
+                <div class="part">
+                    <label for="">Deposit: </label>
+                    <input type="text" id="deposit">
+                </div>
+                <div class="part">
+                    <button id="create_acc" onclick="createAccount()"> Create new account </button>
+                </div>
+                <textarea name="" id="info" cols="75" rows="15"></textarea>
+            </div>
+
+        </fieldset>
+    </div>
+</body>
+
+</html>

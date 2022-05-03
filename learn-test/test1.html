@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .account {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            width: 10%;
+        }
+
+        label,
+        input,
+        button {
+            margin: 10px 0;
+        }
+    </style>
+    <title>Closure lab</title>
+</head>
+
+<body>
+
+    <fieldset class="account">
+        <legend>QUESTION 2</legend>
+        <div class="inputs">
+            <label for="acc_name">Account Name</label>
+            <input type="text" name="acc_name" id="acc_name" />
+            <label for="deposit">Deposit</label>
+            <input type="number" name="deposit" id="deposit" />
+            <button id="create_acc" onclick="createAccount()"> Create new account </button>
+        </div>
+        <textarea name="info" id="info" cols="80" rows="30"></textarea>
+    </fieldset>
+</body>
+<script>
+
+    accountList = [];
+    var AC = (function () {
+        var accountObj = {
+            accountName: "",
+            deposit: 0,
+        };
+
+        let add = function (name, deposit) {
+            var newAcc = Object.create(accountObj);
+            newAcc.accName = name;
+            newAcc.deposit = deposit;
+
+            accountList.push(newAcc);
+        };
+
+        return {
+            addAccount: function (name, deposit) {
+                add(name, deposit);
+            },
+        };
+    })();
+
+    function createAccount() {
+        var accName = document.getElementById("acc_name").value;
+        var deposit = document.getElementById("deposit").value;
+
+        AC.addAccount(accName, deposit);
+
+        document.getElementById("info").innerHTML = accountList.map(
+            (e) => "\nAccount name: " + e.accName + " Balance: " + e.deposit
+        );
+
+        console.log(accountList);
+    }
+
+    // var rudyTimer = (function () {
+    //     let intervalId;
+    //     return function () {
+    //         if (intervalId != null) {
+    //             clearInterval(intervalId);
+    //             intervalId = null;
+    //         } else {
+    //             intervalId = setInterval(function () {
+    //                 document.getElementById("change_id").innerHTML += "rudy! ";
+    //             }, 1000);
+    //         }
+    //     };
+    // })();
+
+    // FOR TESTING PURPOSE
+    // const prodIt = function productFinder() {
+    //   var product = 1;
+    //   for (var i = 0; i < arguments.length; i++) {
+    //     product *= arguments[i];
+    //   }
+    //   return product;
+    // };
+
+    // const newobj = class NewObject {
+    //   constructor(name, major) {
+    //     this.name = name;
+    //     this.major = major;
+    //   }
+
+    //   calc(var1, var2) {
+    //     return var1 == var2 ? var1 * var1 : var1 > var2 ? var2 : var1;
+    //   }
+    // };
+</script>
+
+</html>
