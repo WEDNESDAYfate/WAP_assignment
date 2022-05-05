@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>your title here</title>
+</head>
+
+<body bgcolor="#fff6e9" text="#660000" link="#3366cc" alink="llizard" vlink="#333399" onload="tick()">
+
+    <b>bird singing</b> --ejm98
+
+    <script type="text/javascript" language="javascript">
+        // hide from older browsers
+        var agt = navigator.userAgent.toLowerCase();
+        if (agt.indexOf("mac") != -1) { var a = "\r"; } else { var a = "\n"; }
+        var max = 0;
+        function tlist() {
+            max = tlist.arguments.length;
+            for (i = 0; i < max; i++) this[i] = tlist.arguments[i];
+        }
+
+        tl = new tlist(
+
+            " " + a +
+            "  \<\") " + a +
+            "   ( \>\\ " + a +
+            "    \" \\\\ " + a +
+            "       \\  ejm" + a,
+
+            "              " + a +
+            "  \>\")       " + a +
+            "   ( \>\\     " + a +
+            "    \" \\\\   " + a +
+            "       \\  ejm" + a
+
+        );
+        var x = 0;
+        function tick() {
+            document.f.t.value = tl[x];
+            x++; if (x == max) x = 0;
+            //if(confirm('continue?'))
+            setTimeout("tick()", 70);
+        }
+    // end-->
+
+    </script>
+
+    <form name="f" action="self"><textarea name="t" rows="6" cols="15">
+</textarea> </form>
+
+    <p><b>to <a href="https://llizardakaejm.wordpress.com/gallery/ascii-animations/">
+                llizard's Javascript ASCII-animations</a></b></p>
+
+</body>
+
+</html>

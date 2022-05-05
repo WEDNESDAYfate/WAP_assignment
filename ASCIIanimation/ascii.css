@@ -1,0 +1,38 @@
+.selection {
+
+    column-count: 4;
+    position: fixed;
+    padding-top: 10px;
+    display: flex;
+    /* padding: 5px 0; */
+    /* align-items: center; */
+    margin-left: 120px;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+
+.box {
+    /* position: fixed; */
+    background-color: rgb(127, 190, 232);
+    padding-bottom: 140px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    border: rgb(4, 4, 4) 1px solid;
+    margin: auto;
+    width: 22cm;
+    margin-top: 30px;
+
+
+}
+
+body {
+    text-align: center;
+
+}
+
+fieldset {
+    margin-left: 15px;
+    border-width: 3px;
+}

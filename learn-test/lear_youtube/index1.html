@@ -1,0 +1,20 @@
+<script>
+
+    function createPerson(name, gender) {
+        return {
+            name: name,
+            gender: gender,
+
+            say_hello: function () {
+                console.log("hello, my name is " + this.name);
+            }
+        };
+    }
+
+    var zaya = createPerson("Zaya", "male");
+    var Ari = createPerson("Ari", "female");
+
+    zaya.say_hello();
+    Ari.say_hello();
+
+</script>

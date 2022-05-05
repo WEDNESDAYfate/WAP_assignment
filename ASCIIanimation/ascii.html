@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ascii.css">
+    <script src="ascii.js"> </script>
+    <script src="animations.js"></script>
+    <title>ASCIImation</title>
+</head>
+
+<body>
+    <div class="box">
+        <h1>CS472: ASCII Animation Viewer</h1>
+        <textarea name="display" id="display" cols="80" rows="20"></textarea>
+        <div class="selection">
+
+            <fieldset>
+                <legend>Play Controls:</legend>
+                <button id="start" onclick="startAnim(this)">Start</button>
+                <button id="stop" onclick="stopAnim(this)" disabled>Stop</button>
+            </fieldset>
+            <fieldset>
+                <legend>Animation:</legend>
+                <select name="" id="animation" onchange="animateIt(this)">
+                    <option value="Exercise">EXERCISE</option>
+                    <option value="Juggler">JUGGLER</option>
+                    <option value="Bike">BIKE</option>
+                    <option value="Dive">DIVE</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Size:</legend>
+                <select name="" id="size" onchange="fontChanged(this)">
+                    <option value="7pt">Tiny</option>
+                    <option value="10pt">Small</option>
+                    <option value="12pt" selected>Medium</option>
+                    <option value="13pt">Large</option>
+                    <!-- <option value="24pt">Extra Large</option>
+                    <option value="32pt">XXL</option> -->
+
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Speed:</legend>
+                <input type="checkbox" id="speed" onchange="speedChanged(this)"> Turbo
+            </fieldset>
+
+        </div>
+    </div>
+</body>
+
+</html>
