@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Adder</title>
+    <script src="server.js"></script>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 13%;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form form action="/" method="post">
+            <h3> Enter two number</h3>
+            <input type="text" name="num1"> <br>
+            <select name="operator" id="operator">
+                <option value="add"> Addition </option>
+                <option value="sub"> Subtraction </option>
+                <option value="multiply"> Multiply </option>
+                <option value="divide"> Divide </option>
+            </select><br>
+            <input type="text" name="num2"><br>
+            <input type="submit" value="Calculate it">
+        </form>
+    </div>
+
+</body>
+
+</html>

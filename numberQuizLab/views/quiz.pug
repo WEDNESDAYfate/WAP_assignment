@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+ head
+   title Number QUIZ
+   style.
+    form {
+    display: flex;
+    }
+    .quiz-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px darkblue;
+    padding: 10px;
+    margin: auto;
+    }
+    .form {
+    margin: auto;
+    display: grid;
+    grid-gap: 10px;
+    }
+    button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+    h1 {
+    margin-top: 10px;
+    text-align: center;
+    }
+ body
+   h1 The Number Quiz
+.quiz-container
+   div.remark
+     p Your current score #{score}
+     if quiz < 6
+      p Guess the next number in the sequence.
+      p= question
+      form(action="/" method="POST")
+        p
+          | Your answer: 
+          input(type='text', name='answer', value='')
+        input(type='hidden', name='quiz', value=quiz)
+        input(type='hidden', name='score', value=score)
+        button(type='submit') Submit
+     else 
+       p You have completed the Number Quiz, with a score of #{score} out of 5

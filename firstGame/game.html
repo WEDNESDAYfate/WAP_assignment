@@ -1,0 +1,36 @@
+<style>
+    #canvas {
+        border: 2px solid black;
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+
+<canvas id="canvas"></canvas>
+<script src="js/draw_grid.js"></script>
+<script src="js/draw_axe.js"></script>
+<script src="js/vector.js"></script>
+
+<script>
+
+    var canvas = window.document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    var width = 800;
+    var height = 600;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    var grid_size = 25;
+    draw_grid(context, grid_size, "rgba(0,0,0,0.3)");
+    draw_axis(context, "black");
+
+    var position = Vertor2.create(100, 100);
+
+    context.fillRect(position.x, position.y, 100, 100);
+
+
+</script>
